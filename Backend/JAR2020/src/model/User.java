@@ -2,6 +2,8 @@ package model;
 
 import java.io.Serializable;
 
+import org.wildfly.security.auth.realm.token.TokenSecurityRealm;
+
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -37,6 +39,12 @@ public class User implements Serializable{
 	}
 	public void setHost(Host host) {
 		this.host = host;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Username: " + username;
 	}
 	
 }
