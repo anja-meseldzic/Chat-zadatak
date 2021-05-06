@@ -1,0 +1,33 @@
+.example-form {
+    width: 80%;
+    color: white;
+    margin: auto;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .center {
+    margin: auto;
+    width: 50%;
+    padding: 2%;
+    background-color: rgb(70, 0, 117);
+    border-radius: 2%;
+    margin-bottom: 2%;
+  }
+  h1{
+    text-align: center;
+    padding: 2%;
+  }
+h2{
+    text-align: center;
+    color: white;
+    padding-bottom: 2%;
+}
+body{
+    background-color: rgb(209, 140, 255);
+}
+button{
+    display: block;
+    margin: auto;
+}
