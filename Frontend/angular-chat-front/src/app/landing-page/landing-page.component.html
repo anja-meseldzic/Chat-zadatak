@@ -1,0 +1,48 @@
+<body>
+<mat-toolbar style="min-width: 100%; max-width: max-content;"> 
+    <span style="width: 10px;"></span>
+    <span font-color="white" style="margin-left: 10px;">Chat</span>
+    <span style="flex: 1 1 auto;" name="unauthenticated-user">
+      <button style="float: right;" mat-button routerLink="../" (click) = "this.userService.logOut()" >
+        Log Out
+      </button>
+    </span>
+  </mat-toolbar>
+  <div style=" display: inline-block; margin-right: 5%; margin-left: 3%;">
+  <table mat-table [dataSource]="registered" style = "margin: 3%; height: 100px; width:150px;"class="mat-elevation-z8">
+
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Registered users </th>
+      <td mat-cell *matCellDef="let element"> {{element}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <table mat-table [dataSource]="loggedIn" style = "margin: 3%; height: 100px; width:150px;" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Logged in users </th>
+      <td mat-cell *matCellDef="let element"> {{element}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-form-field style="margin-top: 20px; " >
+    <mat-label>Select user you want to chat with</mat-label>
+    <mat-select [(ngModel)]="selected" name="food">
+      <mat-option *ngFor="let user of registered" [value] = "user">
+        {{user}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+  <div style="width: 65%; display: inline-block; position: relative;">
+    <app-messages [selected]="selected"></app-messages>
+</div>
+
+    
+</body>

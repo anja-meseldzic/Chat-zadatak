@@ -5,14 +5,14 @@
     <form class="example-form">
         <mat-form-field class="example-full-width">
           <mat-label style="font-size: 20px;padding-bottom: 10px;">Username</mat-label>
-          <input matInput>
+          <input matInput name = "user" [(ngModel)] = "username">
         </mat-form-field>
       
         <mat-form-field class="example-full-width">
             <mat-label style="font-size: 20px;padding-bottom: 10px;">Password</mat-label>
-            <input matInput>
+            <input matInput name = "pass" [(ngModel)] = "password" type="password">
           </mat-form-field>
-          <button mat-raised-button color="accent">Log in</button>
+          <button mat-raised-button color="accent" (click) = login()>Log in</button>
       </form>
 </div>
 <div class ="center">
@@ -20,14 +20,14 @@
     <form class="example-form">
         <mat-form-field class="example-full-width">
           <mat-label style="font-size: 20px;padding-bottom: 10px;">Enter username</mat-label>
-          <input matInput>
+          <input matInput name = "username" [(ngModel)] = "username1">
         </mat-form-field>
       
         <mat-form-field class="example-full-width">
             <mat-label style="font-size: 20px;padding-bottom: 10px;">Enter password</mat-label>
-            <input matInput>
+            <input matInput name= "password" [(ngModel)] = "password1" type="password">
           </mat-form-field>
-          <button mat-raised-button color="accent">Register</button>
+          <button mat-raised-button color="accent" (click) = register()>Register</button>
       </form>
 </div>
 </body>
